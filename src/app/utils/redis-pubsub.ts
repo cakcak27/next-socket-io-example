@@ -30,6 +30,10 @@ export class RedisPubSub {
 
 export async function getRedisPubSubInstance() {
     const { pubClient, subClient } = RedisPubSub.getInstance();
+    
+    pubClient.on('error', err => console.error('PubClient Error', err));
+    subClient.on('error', err => console.error('SubClient Error', err));
+
     if(!pubClient.isOpen){
         await pubClient.connect()
     }

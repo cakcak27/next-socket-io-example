@@ -7,7 +7,7 @@ First, run the development server:
 ```bash
 npm run dev
 # or
-yarn dev
+yarn dev:socket
 # or
 pnpm dev
 # or
@@ -34,3 +34,33 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+## CREATE USER
+```sh
+CREATE USER next_socket WITH CREATEDB PASSWORD 'next_socket';
+```
+
+## CREATE DB
+1. login with user next_socket
+```sh
+psql -U next_socket -h localhost -d postgres;
+```
+2. create database 
+```sh
+psql (17.2 (Ubuntu 17.2-1.pgdg20.04+1))
+SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384, compression: off, ALPN: postgresql)
+Type "help" for help.
+
+postgres=> CREATE DATABASE next_socket;
+CREATE DATABASE next_socket
+```
+
+## Migration
+```sh
+yarn migration
+```
+## Running with socket for development
+```sh
+yarn dev:socket
+```

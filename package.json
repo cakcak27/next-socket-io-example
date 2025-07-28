@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "start:socket": "node server.js",
-    "lint": "next lint"
+    "lint": "next lint",
+    "migration": "prisma migration dev"
   },
   "dependencies": {
     "@prisma/client": "^5.19.0",

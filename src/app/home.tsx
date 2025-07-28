@@ -29,7 +29,6 @@ export function Home() {
             <SignupForm />
             <div className="flex flex-col">
                 <p>Status: {isConnected ? "connected" : "disconnected"}</p>
-                <p>On hello: {message}</p>
             </div>
         </Card>
     );
